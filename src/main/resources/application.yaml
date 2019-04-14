@@ -1,0 +1,18 @@
+jwt:
+  expire-time: 3600
+  header: X-API-TOKEN
+  signing-key: BDJvVGFvgDGvHGFVF
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    # Use a strong password in real world
+    password: bici2
+    url: jdbc:mysql://localhost:3306/bici2
+    username: bici2
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+server:
+contextPath: /biciapi
