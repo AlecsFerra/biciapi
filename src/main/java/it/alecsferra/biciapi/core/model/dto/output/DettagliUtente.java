@@ -9,6 +9,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class DettagliUtente {
 
+    private Long id;
+
     private String username;
 
     private String nome;

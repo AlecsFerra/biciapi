@@ -43,6 +43,11 @@ public class StazioniController {
         this.modelMapper = new ModelMapper();
     }
 
+    @GetMapping(value = "/stazioni")
+    List<Stazione> getAll() {
+        return stazioniService.findAll();
+    }
+
     @GetMapping(value = "/stazioni/{idStazione}")
     ResponseEntity<Stazione> infoStazione(@PathVariable long idStazione) {
 

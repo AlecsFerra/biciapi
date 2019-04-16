@@ -6,6 +6,7 @@ import it.alecsferra.biciapi.core.service.StazioniService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,5 +22,10 @@ public class StazioneServiceImpl implements StazioniService {
     @Override
     public Optional<Stazione> findById(Long id) {
         return stazioneRepository.findById(id);
+    }
+
+    @Override
+    public List<Stazione> findAll() {
+        return stazioneRepository.findAll();
     }
 }

@@ -1,6 +1,5 @@
 package it.alecsferra.biciapi.core.controller;
 
-import it.alecsferra.biciapi.core.Utils;
 import it.alecsferra.biciapi.core.model.dto.input.LoginDto;
 import it.alecsferra.biciapi.core.model.dto.input.RegisterUserDto;
 import it.alecsferra.biciapi.core.model.dto.output.DettagliUtente;
@@ -84,6 +83,18 @@ public class UtentiController {
         Utente me = utentiService.findByUsername(username).get();
 
         return modelMapper.map(me, DettagliUtente.class);
+
+    }
+
+    @GetMapping("users")
+    public ResponseEntity<List<DettagliUtente>> getAllUtenti(){
+
+        Utente me = utentiService.findByUsername(getCurrentUsername()).get();
+
+        if(!me.getRuolo().equals("admin"))
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).eTag("Admin only").build();
+
+        return ResponseEntity.ok(utentiService.findAll());
 
     }
 
