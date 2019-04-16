@@ -1,0 +1,21 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+
+header {
+    background-color: blueviolet;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    background-color: lightskyblue;
+}
+
+.menu {
+    background-color: lightskyblue;
+    color: white;
+}
+
+.error {
+    color: red;
+}
